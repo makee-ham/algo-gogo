@@ -80,43 +80,109 @@ class LinkedList {
       return deleted.data;
     }
 
-    let prev = this.head;
-    let current = this.head.next;
+    let prevNode = this.head;
+    let currentNode = this.head.next;
 
-    while (current) {
-      if (current.data === data) {
-        prev.next = current.next;
+    while (currentNode) {
+      if (currentNode.data === data) {
+        prevNode.next = currentNode.next;
 
         // 마지막 노드 대상일 때
-        if (current === this.tail) this.tail = prev;
+        if (currentNode === this.tail) this.tail = prevNode;
 
         this.length--;
-        return current.data;
+        return currentNode.data;
       }
-      prev = current;
-      current = current.next;
+      prevNode = currentNode;
+      currentNode = currentNode.next;
     }
 
     return null;
   }
 
   //특정 위치의 노드 삭제
-  deleteAt(index) {}
+  deleteAt(index) {
+    if (index < 0 || index >= this.length) return null;
+
+    if (index === 0) {
+      const deletedNode = this.head;
+      this.head = this.head.next;
+      this.length--;
+      if (this.length === 0) {
+        this.head = null;
+        this.tail = null;
+      }
+      return deletedNode;
+    }
+
+    let prevNode = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      prevNode = prevNode.next;
+    }
+
+    const deletedNode = prevNode.next;
+    prevNode.next = deletedNode.next;
+
+    if (deletedNode === this.tail) {
+      this.tail = prevNode;
+    }
+
+    this.length--;
+
+    return deletedNode;
+  }
 
   //특정 값을 가지는 노드 탐색 (있으면 true/없으면 false)
-  search(data) {}
+  search(data) {
+    if (this.length === 0) return false;
+
+    let currentNode = this.head;
+
+    while (currentNode) {
+      if (currentNode.data === data) return true;
+      currentNode = currentNode.next;
+    }
+
+    return false;
+  }
 
   //특정 값을 가지는 노드의 첫번째 인덱스 반환(없으면 -1 반환)
-  indexOf(data) {}
+  indexOf(data) {
+    if (this.length === 0) return -1;
+
+    let currentNode = this.head;
+    let i = 0;
+
+    while (currentNode) {
+      if (currentNode.data === data) return i;
+      currentNode = currentNode.next;
+      i++;
+    }
+
+    return -1;
+  }
 
   //리스트가 비어 있는지 확인
-  isEmpty() {}
+  isEmpty() {
+    return this.length === 0;
+  }
 
   //현재 연결 리스트에 포함된 노드 수 반환
-  size() {}
+  size() {
+    return this.length;
+  }
 
   //연결 리스트의 모든 노드를 순차적으로 출력
-  display() {}
+  display() {
+    if (this.length === 0) return;
+
+    let currentNode = this.head;
+
+    while (currentNode) {
+      console.log(currentNode.data);
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 export default LinkedList;
