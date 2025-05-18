@@ -174,14 +174,14 @@ class LinkedList {
 
   //연결 리스트의 모든 노드를 순차적으로 출력
   display() {
-    if (this.length === 0) return;
-
     let currentNode = this.head;
-
+    let str = "";
     while (currentNode) {
-      console.log(currentNode.data);
+      str += currentNode.data + " -> ";
       currentNode = currentNode.next;
     }
+    str += "null";
+    console.log(str);
   }
 }
 
