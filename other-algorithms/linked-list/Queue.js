@@ -39,7 +39,7 @@ class Queue {
     this.length--;
 
     if (this.length === 0) {
-      this.head = null;
+      this.head = null; // 불필요! 이미 구해져 있음
       this.tail = null;
     }
 
