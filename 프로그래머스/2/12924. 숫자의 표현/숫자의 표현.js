@@ -55,7 +55,7 @@ function solution(n) {
         if(sum < n) {
             // 아직 n보다 작으니 다음 수로 end 지정
             sum += ++end;
-        } else (sum > n) {
+        } else if (sum > n) {
             // n보다 커졌으니 시작값 빼면 그 다음 값~end 합 됨
             sum -= start++;
         } else {
@@ -76,29 +76,31 @@ function solution(n) {
 // 이럴수가 다들 천잰가? 나는 구몬 수학을 신청해야 할 것 같다.
 // 그래서 내 맘대로 재민지 크로스를 했다. (둘의 힌트를 결합)
 
-/*
 function solution(n) {
     let count = 0;
     let start = 1;
     let end = 1;
     let sum = 1;
     
-    // n / 2 + 1에서 +1은 홀수 경우 때문
-    while(start <= n / 2 + 1) {
+    // n / 2 + 1에서 +1은 홀수 경우 때문 << 아니 얘 떔에 안 됐구나
+    while(start <= n / 2) {
         if(sum < n) {
-            sum += end++;
-        } else (sum > n) {
-            sum -= start++
+            sum += ++end;
+        } else if (sum > n) {
+            sum -= start++;
         } else {
             count++;
             sum -= start++;
         }
     }
     
-    // count + 1한 건 'n 자기 자신' 케이스 때문
+    // n 자기 자신 포함하기 위해
     return count + 1;
 }
-*/
+
+
+///////////////////
+// 번외
 
 // 재민 님 풀이 넣어보기
 // 결과: 헐 이제 이것도 안 됨
@@ -128,6 +130,8 @@ function solution(n) {
 */
 
 // 민지 님 풀이 넣어보기
+// 결과: 이건 됨
+/*
 function solution(n) {
     let count = 1;
     let start = 1, end = 1;
@@ -149,3 +153,4 @@ function solution(n) {
     
     return count;
 }
+*/
