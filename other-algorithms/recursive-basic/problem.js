@@ -1,11 +1,20 @@
 /**
- * 밑과 지수를 입력받아 밑의 거듭제곱을 지수로 반환하는 함수
+ * 거듭제곱을 재귀로 구현하는 함수
  * @param {number} base
  * @param {number} exponent
  * @returns {number}
  */
 export function power(base, exponent) {
-  return 1;
+  // 0의 0승 돌려보내기
+  if (base === 0 && exponent <= 0)
+    return "0의 0제곱을 알아보고 싶다면 let's googling!";
+  // base가 0이고 지수가 0보다 클 때
+  if (base === 0 && exponent > 0) return 0;
+  // 1. Base Case (stop condition)
+  if (exponent === 0) return 1;
+  // 2. Recursive Case -> Base Case를 향해 수렴되어야 함
+  if (exponent < 0) return 1 / power(base, -exponent); // 음수 지수 처리
+  return base * power(base, exponent - 1);
 }
 
 /**
@@ -14,7 +23,13 @@ export function power(base, exponent) {
  * @returns {number}
  */
 export function factorial(num) {
-  return 1;
+  // 음수는 저리 가라
+  if (num < 0)
+    return "factorial is not defined for negative numbers, too bad for ya";
+  // 1. Base Case (stop condition)
+  if (num === 0 || num === 1) return 1;
+  // 2. Recursive Case
+  return num * factorial(num - 1);
 }
 
 /**
@@ -23,7 +38,11 @@ export function factorial(num) {
  * @returns {number}
  */
 export function recursiveSum(num) {
-  return 1;
+  // 1. Base Case (stop condition)
+  if (num === 0) return 0;
+  // 2. Recursive Case
+  if (num < 0) return -recursiveSum(-num); // 음수 처리
+  return num + recursiveSum(num - 1);
 }
 
 /**
@@ -34,9 +53,14 @@ export function recursiveSum(num) {
  * @returns {number}
  */
 export function fibonacci(n) {
+  // 예외값 처리
+  if (n <= 0) return "what do ya want you little cowboy";
+  // 1. Base Case (stop condition)
   if (n === 1 || n === 2) {
     return 1;
   } else {
     //your code here
+    // 2. Recursive Case
+    return fibonacci(n - 1) + fibonacci(n - 2);
   }
 }
