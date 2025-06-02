@@ -25,7 +25,7 @@ function solution(X, Y) {
         }
     }
     
-    // 공통 정수 구하기
+    // 공통 정수 구하기 - 공통의 key(정수)를 찾고 그 value(개수) 중 더 적은 것만큼 commonInt에 push
     Object.keys(counterX).forEach((key) => {
       if (counterY[key]) {
         const count = Math.min(counterX[key], counterY[key]);
