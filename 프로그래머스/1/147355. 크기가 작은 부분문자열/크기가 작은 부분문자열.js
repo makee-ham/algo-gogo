@@ -1,4 +1,5 @@
 // 재현퀘스트 w2-3 Sliding Window 패턴
+/*
 function solution(t, p) {
     const WINDOW_LENGTH = p.length;
     const tArr = [...t];
@@ -15,4 +16,19 @@ function solution(t, p) {
     }
     
     return result;
+}
+*/
+
+// refactoring
+function solution(t, p) {
+    const WINDOW_LENGTH = p.length;
+    const P_VALUE = Number(p);
+    let count = 0;
+
+    for (let i = 0; i <= t.length - WINDOW_LENGTH; i++) {
+        const window = t.substring(i, i + WINDOW_LENGTH);
+        if (Number(window) <= P_VALUE) count++;
+    }
+
+    return count;
 }
