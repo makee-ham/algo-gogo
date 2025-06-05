@@ -1,5 +1,4 @@
 // 재현퀘스트 w2-3 Sliding Window 패턴
-/*
 function solution(t, p) {
     const WINDOW_LENGTH = p.length;
     const tArr = [...t];
@@ -17,9 +16,9 @@ function solution(t, p) {
     
     return result;
 }
-*/
 
-// refactoring
+// refactoring인줄 알았지만... - 근데 이거 brute force라서 시간 더 걸림
+/*
 function solution(t, p) {
     const WINDOW_LENGTH = p.length;
     const P_VALUE = Number(p);
@@ -32,3 +31,4 @@ function solution(t, p) {
 
     return count;
 }
+*/
