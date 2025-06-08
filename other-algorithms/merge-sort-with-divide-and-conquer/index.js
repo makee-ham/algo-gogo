@@ -1,4 +1,5 @@
 /*
+ * https://www.youtube.com/watch?v=aj3vw_KDmxc
  * 영상을 보고 merge sort를 순수함수로 완성해주세요.
  * (영상에 나온 코드는 비순수함수)
  *
@@ -17,6 +18,23 @@
  */
 const merge = (arr1, arr2) => {
   //your code here!
+  const mergedArr = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length || j < arr2.length) {
+    if (i >= arr1.length) {
+      mergedArr.push(arr2[j++]);
+    } else if (j >= arr2.length) {
+      mergedArr.push(arr1[i++]);
+    } else if (arr1[i] <= arr2[j]) {
+      mergedArr.push(arr1[i++]);
+    } else {
+      mergedArr.push(arr2[j++]);
+    }
+  }
+
+  return mergedArr;
 };
 
 /**
@@ -25,6 +43,14 @@ const merge = (arr1, arr2) => {
  */
 const mergeSort = (arr) => {
   //your code here!
+  if (arr.length <= 1) return arr;
+
+  const midIndex = Math.floor(arr.length / 2);
+
+  return merge(
+    mergeSort(arr.slice(0, midIndex)),
+    mergeSort(arr.slice(midIndex))
+  );
 };
 
 // *************** 아래 코드는 건들면 안됩니다! ***************
@@ -48,68 +74,68 @@ const runTests = () => {
   assertArraysEqual(
     merge([1, 3, 5], [2, 4, 6]),
     [1, 2, 3, 4, 5, 6],
-    'merge: two sorted arrays'
+    "merge: two sorted arrays"
   );
-  assertArraysEqual(merge([], [1, 2]), [1, 2], 'merge: one empty array');
-  assertArraysEqual(merge([], []), [], 'merge: both arrays empty');
+  assertArraysEqual(merge([], [1, 2]), [1, 2], "merge: one empty array");
+  assertArraysEqual(merge([], []), [], "merge: both arrays empty");
 
   // 기본 케이스
   assertArraysEqual(
     mergeSort([4, 2, 7, 1]),
     [1, 2, 4, 7],
-    'mergeSort: 기본 정렬'
+    "mergeSort: 기본 정렬"
   );
 
   // 엣지 케이스
-  assertArraysEqual(mergeSort([]), [], 'mergeSort: 빈 배열');
-  assertArraysEqual(mergeSort([5]), [5], 'mergeSort: 원소 하나');
+  assertArraysEqual(mergeSort([]), [], "mergeSort: 빈 배열");
+  assertArraysEqual(mergeSort([5]), [5], "mergeSort: 원소 하나");
 
   // 이미 정렬된 배열
   assertArraysEqual(
     mergeSort([1, 2, 3, 4, 5]),
     [1, 2, 3, 4, 5],
-    'mergeSort: 정렬된 배열'
+    "mergeSort: 정렬된 배열"
   );
 
   // 역순 배열
   assertArraysEqual(
     mergeSort([5, 4, 3, 2, 1]),
     [1, 2, 3, 4, 5],
-    'mergeSort: 역정렬 배열'
+    "mergeSort: 역정렬 배열"
   );
 
   // 중복 원소
   assertArraysEqual(
     mergeSort([4, 2, 2, 1, 4]),
     [1, 2, 2, 4, 4],
-    'mergeSort: 중복 포함'
+    "mergeSort: 중복 포함"
   );
 
   // 음수 포함
   assertArraysEqual(
     mergeSort([3, -1, 0, -5, 2]),
     [-5, -1, 0, 2, 3],
-    'mergeSort: 음수 포함'
+    "mergeSort: 음수 포함"
   );
 
   // 짝수 개수
   assertArraysEqual(
     mergeSort([8, 4, 6, 2]),
     [2, 4, 6, 8],
-    'mergeSort: 짝수 개수 원소'
+    "mergeSort: 짝수 개수 원소"
   );
 
   // 홀수 개수
   assertArraysEqual(
     mergeSort([7, 3, 5]),
     [3, 5, 7],
-    'mergeSort: 홀수 개수 원소'
+    "mergeSort: 홀수 개수 원소"
   );
 
   // 큰 배열
   const input = [9, 4, 6, 1, 7, 3, 8, 2, 5, 0];
   const expected = [...input].sort((a, b) => a - b);
-  assertArraysEqual(mergeSort(input), expected, 'mergeSort: 10개 원소 배열');
+  assertArraysEqual(mergeSort(input), expected, "mergeSort: 10개 원소 배열");
 };
 
 runTests();
