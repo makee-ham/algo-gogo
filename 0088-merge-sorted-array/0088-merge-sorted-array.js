@@ -13,11 +13,9 @@ var merge = function(nums1, m, nums2, n) {
 
     while (j >= 0) {
         if (i >= 0 && nums1[i] > nums2[j]) {
-            nums1[recentIdx--] = nums1[i];
-            i--;
+            nums1[recentIdx--] = nums1[i--];
         } else {
-            nums1[recentIdx--] = nums2[j];
-            j--;
+            nums1[recentIdx--] = nums2[j--];
         }
     }
 };
