@@ -15,6 +15,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0011-container-with-most-water](https://github.com/makee-ham/algo-gogo/tree/master/0011-container-with-most-water) |
 | [0088-merge-sorted-array](https://github.com/makee-ham/algo-gogo/tree/master/0088-merge-sorted-array) |
+| [1894-merge-strings-alternately](https://github.com/makee-ham/algo-gogo/tree/master/1894-merge-strings-alternately) |
 ## Greedy
 |  |
 | ------- |
@@ -26,6 +27,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## String
 |  |
 | ------- |
+| [1894-merge-strings-alternately](https://github.com/makee-ham/algo-gogo/tree/master/1894-merge-strings-alternately) |
 | [3753-maximum-difference-between-even-and-odd-frequency-i](https://github.com/makee-ham/algo-gogo/tree/master/3753-maximum-difference-between-even-and-odd-frequency-i) |
 ## Counting
 |  |
