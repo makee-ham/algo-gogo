@@ -27,6 +27,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## String
 |  |
 | ------- |
+| [1146-greatest-common-divisor-of-strings](https://github.com/makee-ham/algo-gogo/tree/master/1146-greatest-common-divisor-of-strings) |
 | [1894-merge-strings-alternately](https://github.com/makee-ham/algo-gogo/tree/master/1894-merge-strings-alternately) |
 | [3753-maximum-difference-between-even-and-odd-frequency-i](https://github.com/makee-ham/algo-gogo/tree/master/3753-maximum-difference-between-even-and-odd-frequency-i) |
 ## Counting
@@ -37,4 +38,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0088-merge-sorted-array](https://github.com/makee-ham/algo-gogo/tree/master/0088-merge-sorted-array) |
+## Math
+|  |
+| ------- |
+| [1146-greatest-common-divisor-of-strings](https://github.com/makee-ham/algo-gogo/tree/master/1146-greatest-common-divisor-of-strings) |
 <!---LeetCode Topics End-->
