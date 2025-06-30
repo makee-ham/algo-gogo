@@ -10,6 +10,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0011-container-with-most-water](https://github.com/makee-ham/algo-gogo/tree/master/0011-container-with-most-water) |
 | [0088-merge-sorted-array](https://github.com/makee-ham/algo-gogo/tree/master/0088-merge-sorted-array) |
+| [1528-kids-with-the-greatest-number-of-candies](https://github.com/makee-ham/algo-gogo/tree/master/1528-kids-with-the-greatest-number-of-candies) |
 ## Two Pointers
 |  |
 | ------- |
