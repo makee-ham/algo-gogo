@@ -1,4 +1,4 @@
-[Lecture Material](https://cs.slides.com/colt_steele/big-o-notation)
+https://cs.slides.com/colt_steele/big-o-notation
 
 # simple definition
 
@@ -7,6 +7,7 @@
 # let’s compare 2 solutions to the same problem
 
 Q. Write a function that calculates the sum of all numbers from 1 up to (and including) some number `n`.
+
 (ex. if `n` is 3, the result would be: 1 + 2 + 3 → 6)
 
 Here are two working solutions of the problem:
@@ -30,6 +31,7 @@ function addUpTo(n) {
 ```
 
 How can we find _which one is better?_
+
 → What does “better” mean?
 
 # What does “better” mean?
@@ -39,7 +41,8 @@ How can we find _which one is better?_
 - More readable?
 - (or brevity?)
 
-⇒ **“Faster” speed** and **“Less memory-intensive”** are often can be more importent than the others
+⇒ **_“Faster” speed_** and **_“Less memory-intensive”_** are often can be more importent than the others
+
 (of course, readability IS important to write good code)
 
 **We’re gonna focus on evaluating speed first, and then memory things.**
@@ -79,20 +82,29 @@ Solution 2 → `3` operations
 - 1 division
 
 Solution 1 → `2n ~ 5n + 2` operations
+
 `total += i`
 
 - n additions
 - n assignments
-  `i++`
+
+`i++`
+
 - n additions and n assignments
-  `let total = 0`
+
+`let total = 0`
+
 - 1 assignment
-  `let i = 1`
+
+`let i = 1`
+
 - 1 assignment
-  `i ≤ n`
+
+`i ≤ n`
+
 - n comparisons
 
-But the accurate number of operations doesn’t matter— what we care about is a **“general trend”**
+But the accurate number of operations doesn’t matter— what we care about is a _“general trend”_
 
 WE ARE FOCUSED ON _BIG PICTURE_
 
